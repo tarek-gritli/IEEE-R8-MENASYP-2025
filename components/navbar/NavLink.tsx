@@ -14,10 +14,10 @@ export default function NavLink({
   return (
     <Link
       href={href}
-      className={`${
-        isActive ? "text-primary100" : isHomePage ? "text-white" : "text-black"
-      } hover:text-${
-        isHomePage ? "white" : "black"
+      className={`${isActive ? "text-primary100" : ""} ${
+        isHomePage
+          ? "text-white hover:text-white"
+          : "text-black hover:text-black"
       } transition-colors relative group`}
     >
       {children}

@@ -11,7 +11,11 @@ export default function Navbar() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   return (
-    <nav className="flex items-center justify-around px-6 py-4 backdrop-blur-sm border-b border-white/10">
+    <nav
+      className={`flex items-center justify-around px-6 py-4 backdrop-blur-sm border-b border-white/10 ${
+        isHomePage ? "navbar-dark" : "navbar-light"
+      }`}
+    >
       <Link href="/" className="flex items-center gap-3">
         <Image
           src={isHomePage ? "/images/logo-dark.png" : "/images/logo-light.png"}
