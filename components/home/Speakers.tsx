@@ -50,7 +50,7 @@ export default function Speakers() {
         <div className="relative">
           <Button
             onClick={prevSpeaker}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-dark/50 p-2 rounded-full"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-dark/50 p-2 rounded-full cursor-pointer"
             aria-label="Previous speaker"
           >
             <ChevronLeft className="h-6 w-6 text-white cursor-pointer" />
@@ -58,7 +58,7 @@ export default function Speakers() {
 
           <Button
             onClick={nextSpeaker}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-dark/50 p-2 rounded-full"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-dark/50 p-2 rounded-full cursor-pointer"
             aria-label="Next speaker"
           >
             <ChevronRight className="h-6 w-6 text-white cursor-pointer" />
