@@ -5,14 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { navbarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
+import NavLink from "./NavLink";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const isHomePage = pathname === "/";
   return (
     <nav className="flex items-center justify-around px-6 py-4 backdrop-blur-sm border-b border-white/10">
       <Link href="/" className="flex items-center gap-3">
         <Image
-          src="/images/logo-dark.png"
+          src={isHomePage ? "/images/logo-dark.png" : "/images/logo-light.png"}
           alt="MenaSYP logo"
           width={60}
           height={60}
@@ -28,6 +30,7 @@ export default function Navbar() {
             key={link.route}
             href={link.route}
             isActive={pathname === link.route}
+            isHomePage={isHomePage}
           >
             {link.label}
           </NavLink>
@@ -40,27 +43,5 @@ export default function Navbar() {
         </Button>
       </div>
     </nav>
-  );
-}
-
-function NavLink({
-  href,
-  children,
-  isActive,
-}: {
-  href: string;
-  children: React.ReactNode;
-  isActive: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      className={`${
-        isActive ? "text-primary100" : "text-white"
-      } hover:text-white transition-colors relative group`}
-    >
-      {children}
-      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary100 transition-all group-hover:w-full" />
-    </Link>
   );
 }
