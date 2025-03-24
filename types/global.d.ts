@@ -16,3 +16,8 @@ interface NavbarLink {
   route: string;
   label: string;
 }
+
+interface Currency {
+  code: string;
+  name: string;
+}
