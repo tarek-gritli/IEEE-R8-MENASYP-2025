@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { speakers } from "@/constants";
+import { Button } from "@/components/ui/button";
 
 export default function Speakers() {
   const [currentSpeaker, setCurrentSpeaker] = useState(0);
@@ -47,21 +48,21 @@ export default function Speakers() {
         </p>
 
         <div className="relative">
-          <button
+          <Button
             onClick={prevSpeaker}
             className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-dark/50 p-2 rounded-full"
             aria-label="Previous speaker"
           >
             <ChevronLeft className="h-6 w-6 text-white cursor-pointer" />
-          </button>
+          </Button>
 
-          <button
+          <Button
             onClick={nextSpeaker}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-dark/50 p-2 rounded-full"
             aria-label="Next speaker"
           >
             <ChevronRight className="h-6 w-6 text-white cursor-pointer" />
-          </button>
+          </Button>
 
           <div className="flex items-stretch justify-center h-[400px]">
             {visibleSpeakers.map((speakerIndex, i) => {
