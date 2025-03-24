@@ -135,6 +135,14 @@ body {
     color: #FF2057;
   }
 
+  .text-dark {
+    color: #3D3D3D;
+  }
+
+  .text-description {
+    color: #B0B0B0;
+  }
+
   .bg-primary100 {
     background-color: #FF2057;
   }
