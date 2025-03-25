@@ -21,3 +21,15 @@ interface Currency {
   code: string;
   name: string;
 }
+
+interface MenaCard {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+}
+
+interface TeamMember {
+  name: string;
+  title: string;
+  image: string;
+}

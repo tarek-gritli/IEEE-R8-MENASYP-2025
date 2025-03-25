@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const About = () => {
   return (
     <section className="bg-dark h-screen flex flex-col justify-center items-center p-4">
