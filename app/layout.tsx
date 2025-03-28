@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
-const manrope = localFont({
-  src: "./fonts/Manrope.ttf",
-  variable: "--font-manrope",
-  weight: "100 900",
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-instrument-sans",
+  display: "swap",
+  weight: ["500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.variable} antialiased flex flex-col min-h-screen`}
+        className={`${instrumentSans.variable} antialiased flex flex-col min-h-screen`}
       >
         <Navbar />
         <main className="flex-grow">{children}</main>
