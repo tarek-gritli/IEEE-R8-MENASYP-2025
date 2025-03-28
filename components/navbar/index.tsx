@@ -17,15 +17,24 @@ export default function Navbar() {
       }`}
     >
       <Link href="/" className="flex items-center gap-3">
-        <Image
-          src={isHomePage ? "/images/logo-dark.png" : "/images/logo-light.png"}
-          alt="MenaSYP logo"
-          width={60}
-          height={60}
-        />
-        <span className="text-primary100 font-medium text-xl mt-3">
-          MenaSYP
-        </span>
+        {isHomePage ? (
+          <Image
+            src="/logo-horizontal-white.svg"
+            alt="MenaSYP logo"
+            width={200}
+            height={100}
+          />
+        ) : (
+          <>
+            <Image
+              src="/logo-icon-black.svg"
+              alt="MenaSYP logo"
+              width={60}
+              height={60}
+            />
+            <span className="text-primary100 font-semibold text-xl">MenaSYP</span>
+          </>
+        )}
       </Link>
 
       <div className="flex justify-center items-center space-x-8">
@@ -42,7 +51,7 @@ export default function Navbar() {
       </div>
 
       <div className="hidden md:flex items-center space-x-4">
-        <Button className="bg-gradient-custom cursor-pointer text-black">
+        <Button className="bg-primary100 cursor-pointer hover:bg-[#ff2040] text-white">
           Register Now!
         </Button>
       </div>
