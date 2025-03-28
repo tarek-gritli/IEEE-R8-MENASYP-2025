@@ -5,9 +5,8 @@ export default function Sponsors() {
   return (
     <section className="py-16 px-4 bg-dark h-screen text-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-4xl font-bold mb-2">
-          <span className="text-dark">Our </span>
-          <span className="text-primary100">Sponsors</span>
+        <h2 className="text-center text-white text-4xl font-bold mb-2">
+          Our Sponsors
         </h2>
         <p className="text-center font-bold text-primary100 mb-12">
           Sponsored By

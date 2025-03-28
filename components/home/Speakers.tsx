@@ -39,9 +39,8 @@ export default function Speakers() {
   return (
     <section className="py-16 px-4 bg-dark text-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-center text-4xl font-bold mb-2">
-          <span className="text-dark">Distinguished </span>
-          <span className="text-primary100">Guests</span>
+        <h2 className="text-center text-white text-4xl font-bold mb-2">
+          Distinguished Guests
         </h2>
         <p className="text-center font-bold text-primary100 mb-12">
           Meet Our Speakers

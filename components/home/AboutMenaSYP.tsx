@@ -7,22 +7,18 @@ export default function AboutSection() {
         {/* Image Section */}
         <div className="flex justify-center">
           <Image
-            src="/images/about-menasyp.png"
+            src="/logo-icon-white.svg"
             alt="about-menasyp"
-            width={600}
-            height={300}
+            width={400}
+            height={400}
             className="max-w-full h-auto"
           />
         </div>
 
         {/* Text Section */}
-        <div className="flex flex-col max-w-xl text-center md:text-left">
-          <h2 className="text-4xl font-bold pb-6 ml-8">
-            <span className="text-dark">About </span>
-            <span className="text-primary100">MENASYP</span>
-            <span className="text-dark"> 2025</span>
-          </h2>
-          <p className="text-description font-bold text-base md:text-lg leading-relaxed">
+        <div className="flex flex-col max-w-xl text-center md:text-left text-white">
+          <h2 className="text-4xl font-bold pb-6 ml-8">About MENASYP 2025</h2>
+          <p className="font-medium text-base md:text-lg leading-relaxed">
             The IEEE R8 MENA Student and Young Professional Congress (MENASYP)
             is a premier regional event that unites students, young
             professionals, and industry leaders from across the MENA region.

@@ -124,9 +124,6 @@
 }
 
 @layer utilities {
-  .bg-gradient-custom {
-    background: linear-gradient(101.91deg, #FFFFFF 0%, #FF2057 87.74%);
-  }
 
   .text-primary100 {
     color: #FF2057;
@@ -146,11 +143,6 @@
 
   .bg-primary100 {
     background-color: #FF2057;
-  }
-
-
-  .navbar-light {
-    background-color: #FFFFFF;
   }
 
   .bg-dark {

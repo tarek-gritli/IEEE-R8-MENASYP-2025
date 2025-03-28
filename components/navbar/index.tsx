@@ -59,7 +59,7 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center space-x-4">
           <Button className="bg-primary100 cursor-pointer hover:bg-[#ff2040] text-white">
-            Register Now!
+            Register Now
           </Button>
         </div>
       </nav>

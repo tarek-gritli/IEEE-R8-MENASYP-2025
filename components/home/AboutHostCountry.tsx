@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function AboutHostCountry() {
   return (
@@ -6,18 +8,16 @@ export default function AboutHostCountry() {
       <div className="flex flex-col md:flex-row justify-around items-center gap-8 w-full">
         {/* Text Section */}
         <div className="flex flex-col max-w-xl text-center md:text-left">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold pb-6">
-              <span className="text-dark">About </span>
-              <span className="text-primary100"> The Host </span>
-              <span className="text-dark">Country</span>
+          <div className="text-left">
+            <h2 className="text-4xl text-white font-bold pb-4">
+              About The Host Country
             </h2>
             <h3 className="text-2xl font-semibold text-primary100 pb-4">
               Tunis, Tunisia
             </h3>
           </div>
 
-          <p className="text-description font-bold md:text-lg leading-relaxed mb-6">
+          <p className="text-white font-medium md:text-lg leading-relaxed mb-6">
             Located in North Africa, Tunisia is a country rich in history,
             culture, and breathtaking landscapes. From ancient Roman ruins and
             UNESCO-listed medinas to stunning Mediterranean beaches and vibrant
@@ -26,12 +26,11 @@ export default function AboutHostCountry() {
             perfect setting for MENASYP 2025, where participants can experience
             both professional growth and an unforgettable cultural journey.
           </p>
-          <a
-            href="#"
-            className="text-primary100 font-bold hover:underline self-center md:self-start"
-          >
-            Learn More →
-          </a>
+          <Link href="about-tunisia">
+            <Button className="bg-primary100 w-30 cursor-pointer rounded hover:bg-[#ff2040] text-white">
+              Learn more
+            </Button>
+          </Link>
         </div>
 
         {/* Image Section */}
