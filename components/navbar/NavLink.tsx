@@ -8,7 +8,7 @@ export default function NavLink({
 }: {
   href: string;
   children: React.ReactNode;
-  isActive: boolean;
+  isActive?: boolean;
   isHomePage: boolean;
 }) {
   return (
