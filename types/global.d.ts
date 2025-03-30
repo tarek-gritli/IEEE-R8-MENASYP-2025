@@ -38,3 +38,12 @@ interface Country {
   name: string;
   image: string;
 }
+
+interface ProgramEvent {
+  title: string;
+  icon: string | React.ReactNode;
+}
+
+interface CongressProgram {
+  [day: string]: ProgramEvent[];
+}
