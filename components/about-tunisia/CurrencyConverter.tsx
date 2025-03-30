@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { currencies } from "@/constants";
 
 const CurrencyConverter = () => {
@@ -66,9 +66,9 @@ const CurrencyConverter = () => {
   };
 
   return (
-    <section className="bg-dark p-12">
-      <h2 className="text-primary100 text-3xl font-bold mb-3">Currency</h2>
-      <p className="text-description font-bold mb-8">
+    <section className="bg-dark p-12 flex flex-col items-center">
+      <h2 className="text-white text-3xl font-bold mb-3">Currency</h2>
+      <p className="text-white font-bold mb-8">
         The national currency is the Tunisian dinar, denoted by the symbol
         "دينار" or "DT" (ISO code: TND).
       </p>
@@ -115,7 +115,7 @@ const CurrencyConverter = () => {
         </div>
 
         {/* Arrow */}
-        <span className="text-primary100 font-bold text-3xl">-{">"}</span>
+        <ArrowRight className="text-primary100 font-bold w-40 h-40" />
 
         {/* To Currency */}
         <div className="relative w-full">

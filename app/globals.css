@@ -186,4 +186,8 @@
     background-position: bottom;
     background-repeat: repeat-x;
   }
+
+  .tunisia-image-border {
+    border: 10px solid #1B1123;
+  }
 }

@@ -2,21 +2,18 @@ const About = () => {
   return (
     <section className="bg-dark h-screen flex flex-col justify-center items-center p-4">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-center">
-          <span className="text-dark">About </span>
-          <span className="text-primary100">Tunisia</span>
+        <h1 className="text-4xl text-white font-bold text-center">
+          About Tunisia
         </h1>
         <p className="font-bold text-primary100 text-xl mt-4">
           Know more about Tunisia
         </p>
       </div>
       <div className="flex flex-col md:flex-row justify-around items-center gap-8 w-full mt-8">
-        <div className="flex flex-col max-w-xl text-center md:text-left">
-          <h3 className="text-2xl font-semibold text-primary100 pb-4 text-left ml-6">
-            Tunisia
-          </h3>
+        <div className="flex flex-col max-w-xl text-center text-white md:text-left">
+          <h3 className="text-3xl font-bold pb-4 text-left ml-6">Tunisia</h3>
 
-          <p className="text-description font-bold md:text-lg leading-relaxed mb-6">
+          <p className="font-medium md:text-lg leading-relaxed mb-6">
             There’s so much to see and do in each region of Tunisia: a wide
             variety of landscapes, a coastline spanning 1,250km, studded with
             islands and archipelagos, a fantastic array of traditions and

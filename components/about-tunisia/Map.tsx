@@ -13,12 +13,12 @@ const Map = () => {
             className="rounded-3xl"
           />
         </div>
-        <div className="flex flex-col max-w-xl text-center md:text-left">
-          <h1 className="text-4xl font-semibold text-primary100 pb-4 text-left ml-6">
+        <div className="flex flex-col max-w-xl text-center text-white md:text-left">
+          <h1 className="text-3xl font-bold pb-4 text-left ml-6">
             From North Africa
           </h1>
 
-          <p className="text-description font-bold md:text-lg leading-relaxed mb-6">
+          <p className="font-medium md:text-lg leading-relaxed mb-6">
             Tunisia is a vibrant country located in North Africa. It is
             characterized by the many cultures and civilizations that were
             established on its land. Tunisia is a true melting pot of Amazigh,
