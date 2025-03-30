@@ -6,7 +6,7 @@ const TunisiaImages = ({ isAboutUsPage }: { isAboutUsPage: boolean }) => {
   return (
     <div className="bg-dark min-h-screen">
       <div className="flex flex-col gap-4 max-w-7xl mx-auto">
-        <div className="w-full h-64 md:h-64 lg:h-80 relative overflow-hidden">
+        <div className="w-full h-80 md:h-96 lg:h-[25rem] relative">
           <Image
             src="/images/sneak-peak-1.png"
             alt="Bizerte port"
@@ -15,7 +15,7 @@ const TunisiaImages = ({ isAboutUsPage }: { isAboutUsPage: boolean }) => {
           />
         </div>
 
-        <div className="grid grid-cols-3 gap-4 h-52 md:h-52 lg:h-64">
+        <div className="grid grid-cols-3 gap-4 h-64 md:h-72 lg:h-96">
           <div className="relative overflow-hidden">
             <Image
               src="/images/sneak-peak-2.png"
@@ -60,7 +60,7 @@ const TunisiaImages = ({ isAboutUsPage }: { isAboutUsPage: boolean }) => {
           </div>
         </div>
 
-        <div className="w-full h-48 md:h-64 lg:h-80 relative overflow-hidden">
+        <div className="w-full h-64 md:h-80 lg:h-[25rem] relative overflow-hidden">
           <Image
             src="/images/sneak-peak-4.png"
             alt="Aerial view of Sousse in Tunisia"
