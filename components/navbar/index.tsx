@@ -22,26 +22,16 @@ export default function Navbar() {
         )}
       >
         <Link href="/" className="flex items-center gap-3">
-          {isHomePage ? (
-            <Image
-              src="/logo-horizontal-white.svg"
-              alt="MenaSYP logo"
-              width={200}
-              height={100}
-            />
-          ) : (
-            <>
-              <Image
-                src="/logo-icon-black.svg"
-                alt="MenaSYP logo"
-                width={60}
-                height={60}
-              />
-              <span className="text-primary100 font-semibold text-xl">
-                MenaSYP
-              </span>
-            </>
-          )}
+          <Image
+            src={
+              isHomePage
+                ? "/logo-horizontal-white.svg"
+                : "/logo-horizontal-black.svg"
+            }
+            alt="MenaSYP logo"
+            width={200}
+            height={100}
+          />
         </Link>
 
         <div className="flex justify-center items-center space-x-8">
