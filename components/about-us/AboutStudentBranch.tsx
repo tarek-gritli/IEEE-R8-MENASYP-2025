@@ -13,12 +13,12 @@ const AboutStudentBranch = () => {
             className="rounded-3xl"
           />
         </div>
-        <div className="flex flex-col max-w-xl text-center md:text-left">
-          <h1 className="text-4xl font-semibold text-primary100 pb-4 text-left ml-6">
+        <div className="flex flex-col max-w-xl text-center text-white md:text-left">
+          <h1 className="text-3xl font-bold pb-4 text-left ml-6">
             About IEEE INSAT Student Branch
           </h1>
 
-          <p className="text-description font-bold md:text-lg leading-relaxed mb-6">
+          <p className="font-medium md:text-lg leading-relaxed mb-6">
             One of the largest IEEE communities in region 8, founded in 2013 at
             the institute of applied sciences and technologies and counting now
             more than 500 active members. Our student branch counts 6 technical

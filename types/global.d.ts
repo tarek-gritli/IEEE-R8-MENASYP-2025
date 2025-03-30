@@ -33,3 +33,8 @@ interface TeamMember {
   title: string;
   image: string;
 }
+
+interface Country {
+  name: string;
+  image: string;
+}

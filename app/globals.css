@@ -190,4 +190,36 @@
   .tunisia-image-border {
     border: 10px solid #1B1123;
   }
+
+  /* Carousel edge fade effects */
+  .carousel-edge-fade-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 120px;
+    background: linear-gradient(270deg, rgba(44, 28, 56, 0) 0%, #2C1C38 100%);
+    z-index: 20;
+    pointer-events: none;
+  }
+
+  .carousel-edge-fade-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 120px;
+    background: linear-gradient(90deg, rgba(44, 28, 56, 0) 0%, #2C1C38 100%);
+    z-index: 20;
+    pointer-events: none;
+  }
+
+  /* Optional: Container masking for smoother edges */
+  .carousel-container {
+    mask-image: linear-gradient(to right,
+        transparent 0%,
+        black 40px,
+        black calc(100% - 40px),
+        transparent 100%);
+  }
 }

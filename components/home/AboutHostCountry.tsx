@@ -27,7 +27,7 @@ export default function AboutHostCountry() {
             both professional growth and an unforgettable cultural journey.
           </p>
           <Link href="about-tunisia">
-            <Button className="bg-primary100 w-30 cursor-pointer rounded hover:bg-[#ff2040] text-white">
+            <Button className="bg-primary100 w-30 cursor-pointer rounded hover:bg-[#ff2040] text-white font-bold text-sm">
               Learn more
             </Button>
           </Link>
