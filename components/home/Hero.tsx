@@ -1,8 +1,30 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Calendar, MapPin } from "lucide-react";
 
 const Hero = () => {
+  const [daysLeft, setDaysLeft] = useState<number | null>(null);
+
+  useEffect(() => {
+    const calculateDaysLeft = () => {
+      const daysRemaining = Math.ceil(
+        (new Date("2025-08-27").getTime() - new Date().getTime()) /
+          (1000 * 60 * 60 * 24)
+      );
+      setDaysLeft(daysRemaining);
+    };
+
+    calculateDaysLeft();
+
+    // Optionally update daily
+    const interval = setInterval(calculateDaysLeft, 86400000); // 24 hours
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="h-screen w-full hero-gradient">
       {/* Left content */}
@@ -14,11 +36,7 @@ const Hero = () => {
           height={300}
         />
         <h1 className="text-white text-3xl font-bold">
-          {Math.ceil(
-            (new Date("2025-08-27").getTime() - new Date().getTime()) /
-              (1000 * 60 * 60 * 24)
-          )}{" "}
-          days left
+          {daysLeft !== null ? `${daysLeft} days left` : "Loading..."}
         </h1>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-4">
           <div className="flex items-center">
