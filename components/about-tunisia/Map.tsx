@@ -1,29 +1,30 @@
 import Image from "next/image";
+import ActionButton from "../ActionButton";
 
 const Map = () => {
   return (
-    <section className="bg-dark h-screen flex flex-col justify-center items-center p-4">
-      <div className="flex flex-col md:flex-row justify-around items-center gap-8 w-full">
-        <div className="flex justify-center">
-          <Image
-            src="/images/tunisia-map.png"
-            alt="Tunisia Map"
-            width={400}
-            height={200}
-            className="rounded-3xl"
-          />
-        </div>
-        <div className="flex flex-col max-w-xl text-center text-white md:text-left">
-          <h1 className="text-3xl font-bold pb-4 text-left ml-6">
-            From North Africa
-          </h1>
+    <section className="bg-dark h-screen flex justify-center items-center p-4">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="space-y-6 text-white">
+          <h2 className="text-4xl font-bold">The Heart of North Africa</h2>
 
-          <p className="font-medium md:text-lg leading-relaxed mb-6">
+          <p className="text-lg font-medium">
             Tunisia is a vibrant country located in North Africa. It is
             characterized by the many cultures and civilizations that were
             established on its land. Tunisia is a true melting pot of Amazigh,
             Arab Muslim, Ottoman, Roman, and Carthage cultures.
           </p>
+
+          <ActionButton text="View on Maps" />
+        </div>
+        <div className="flex justify-center max-h-100">
+          <Image
+            src="/images/tunisia-map.jpg"
+            alt="Stacked IEEE images"
+            width={600}
+            height={400}
+            className="object-fill"
+          />
         </div>
       </div>
     </section>

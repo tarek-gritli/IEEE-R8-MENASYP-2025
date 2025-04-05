@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { Calendar, MapPin } from "lucide-react";
 import ActionButton from "../ActionButton";
+import HeroGradient from "../HeroGradient";
 
 const Hero = () => {
   const [daysLeft, setDaysLeft] = useState<number | null>(null);
@@ -27,8 +28,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="h-screen w-full hero-gradient">
-      {/* Left content */}
+    <HeroGradient backgroundType="image" backgroundSrc="/images/hero.jpg">
       <div className="flex flex-col items-center justify-center h-full">
         <Image
           src="/images/logo-squared-white.png"
@@ -51,7 +51,7 @@ const Hero = () => {
         </div>
         <ActionButton text="Register Now" className="mt-4" />
       </div>
-    </section>
+    </HeroGradient>
   );
 };
 

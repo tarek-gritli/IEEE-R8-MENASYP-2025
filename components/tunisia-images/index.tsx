@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const TunisiaImages = ({ isHomePage }: { isHomePage: boolean }) => {
   return (
-    <div className="bg-dark min-h-screen">
+    <div className="bg-dark">
       <div className="flex flex-col gap-4 max-w-6xl mx-auto">
         <div className="w-full h-80 md:h-96 lg:h-[25rem] relative">
           <Image

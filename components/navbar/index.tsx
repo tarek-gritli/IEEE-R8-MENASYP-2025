@@ -1,34 +1,20 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { navbarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import NavLink from "./NavLink";
-import { cn } from "@/lib/utils";
 import ActionButton from "../ActionButton";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const isHomePage = pathname === "/";
   return (
-    <div className={cn("relative", isHomePage ? "" : "bg-white")}>
-      <nav
-        className={cn(
-          "w-full z-50 transition-all duration-300 flex items-center justify-around px-6 py-4",
-          isHomePage
-            ? "absolute navbar-gradient text-white"
-            : "relative bg-white"
-        )}
-      >
+    <div className="relative">
+      <nav className="w-full z-50 transition-all duration-300 flex items-center justify-around px-6 py-4 absolute navbar-gradient text-white">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src={
-              isHomePage
-                ? "/logo-horizontal-white.svg"
-                : "/logo-horizontal-black.svg"
-            }
+            src="/logo-horizontal-white.svg"
             alt="MenaSYP logo"
             width={200}
             height={100}
@@ -41,7 +27,6 @@ export default function Navbar() {
               key={link.route}
               href={link.route}
               isActive={pathname === link.route}
-              isHomePage={isHomePage}
             >
               {link.label}
             </NavLink>

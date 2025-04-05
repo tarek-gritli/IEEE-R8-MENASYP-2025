@@ -4,13 +4,17 @@ const Section = ({
   title,
   description,
   children,
+  className = "",
 }: {
   title: string;
   description: string;
   children: React.ReactNode;
+  className?: string;
 }) => {
   return (
-    <section className="bg-dark min-h-screen flex flex-col justify-center items-center py-12 px-4">
+    <section
+      className={`bg-dark min-h-screen flex flex-col max-w- xl py-12 px-4 ${className}`}
+    >
       <TextWithPattern title={title} description={description} />
 
       {children}

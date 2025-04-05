@@ -17,7 +17,7 @@ const Footer = () => {
         <div>
           <nav className="flex flex-wrap justify-center gap-x-8 gap-y-2">
             {navbarLinks.map((link) => (
-              <NavLink key={link.route} href={link.route} isHomePage={true}>
+              <NavLink key={link.route} href={link.route}>
                 {link.label}
               </NavLink>
             ))}

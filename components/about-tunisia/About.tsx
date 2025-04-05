@@ -1,29 +1,37 @@
-const About = () => {
-  return (
-    <section className="bg-dark h-screen flex flex-col justify-center items-center p-4">
-      <div className="mb-8">
-        <h1 className="text-4xl text-white font-bold text-center">
-          About Tunisia
-        </h1>
-        <p className="font-bold text-primary100 text-xl mt-4">
-          Know more about Tunisia
-        </p>
-      </div>
-      <div className="flex flex-col md:flex-row justify-around items-center gap-8 w-full mt-8">
-        <div className="flex flex-col max-w-xl text-center text-white md:text-left">
-          <h3 className="text-3xl font-bold pb-4 text-left ml-6">Tunisia</h3>
+import Link from "next/link";
+import ActionButton from "../ActionButton";
 
-          <p className="font-medium md:text-lg leading-relaxed mb-6">
-            There’s so much to see and do in each region of Tunisia: a wide
+export default function About() {
+  return (
+    <section
+      id="discover"
+      className="bg-dark h-screen flex justify-center items-center p-4"
+    >
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="space-y-6 text-white">
+          <h2 className="text-4xl font-bold">
+            Tunisia: The Gem of the Mediterranean
+          </h2>
+
+          <p className="text-lg font-medium">
+            There is so much to see and do in each region of Tunisia: a wide
             variety of landscapes, a coastline spanning 1,250km, studded with
             islands and archipelagos, a fantastic array of traditions and
-            customs and a rich historical heritage. We are delighted to
-            introduce you to these regions by breaking them down into this
-            video.
+            customs and a rich historical heritage.
           </p>
-        </div>
 
-        <div>
+          <p className="text-lg font-medium">
+            We are delighted to introduce you to these regions by breaking them
+            down into this video.
+          </p>
+          <Link href="https://www.discovertunisia.com/en/" target="_blank">
+            <ActionButton
+              text="Discover Tunisia Official Website"
+              className="max-w-sm"
+            />
+          </Link>
+        </div>
+        <div className="flex justify-center">
           <iframe
             width="560"
             height="315"
@@ -38,6 +46,4 @@ const About = () => {
       </div>
     </section>
   );
-};
-
-export default About;
+}

@@ -5,23 +5,19 @@ export const navbarLinks: NavbarLink[] = [
   },
   {
     route: "/about-tunisia",
-    label: "About Tunisia",
+    label: "Tunisia",
   },
   {
     route: "/about-us",
-    label: "About Us",
+    label: "About",
   },
   {
     route: "/program",
     label: "Program",
   },
   {
-    route: "/sponsors",
-    label: "Sponsors",
-  },
-  {
     route: "/partners",
-    label: "IEEE Partners",
+    label: "Partners",
   },
   {
     route: "/faq",
