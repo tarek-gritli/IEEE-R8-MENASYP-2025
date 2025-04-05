@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Calendar, MapPin } from "lucide-react";
+import ActionButton from "../ActionButton";
 
 const Hero = () => {
   const [daysLeft, setDaysLeft] = useState<number | null>(null);
@@ -48,9 +49,7 @@ const Hero = () => {
             <span className="text-white font-medium">Gammarth, Tunisia</span>
           </div>
         </div>
-        <Button className="mt-4 bg-primary100 text-white font-bold rounded cursor-pointer">
-          Register Now
-        </Button>
+        <ActionButton isHomePage={true} text="Register Now" className="mt-4" />
       </div>
     </section>
   );

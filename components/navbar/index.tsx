@@ -7,6 +7,7 @@ import { navbarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import NavLink from "./NavLink";
 import { cn } from "@/lib/utils";
+import ActionButton from "../ActionButton";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -48,14 +49,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Button
-            className={cn(
-              "bg-primary100 cursor-pointer hover:bg-[#ff2040]",
-              isHomePage ? "text-white" : "text-black"
-            )}
-          >
-            Register Now
-          </Button>
+          <ActionButton isHomePage={isHomePage} text={"Register Now"} />
         </div>
       </nav>
     </div>

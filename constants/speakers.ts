@@ -3,7 +3,7 @@ export const speakers: Speaker[] = [
     id: 1,
     name: "John Doe",
     title: "CORPORATE ADVISOR, STRIPE DEMO",
-    image: "/images/sneak-peak-1.png",
+    image: "/images/sneak-peak-1.jpg",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const speakers: Speaker[] = [
     id: 3,
     name: "Ahmed Hassan",
     title: "IEEE FELLOW, INNOVATION LAB",
-    image: "/images/sneak-peak-3.png",
+    image: "/images/sneak-peak-3.webp",
   },
   {
     id: 4,
@@ -27,7 +27,7 @@ export const speakers: Speaker[] = [
     id: 5,
     name: "David Kim",
     title: "PROFESSOR, ENGINEERING DEPT",
-    image: "/images/sneak-peak-1.png",
+    image: "/images/sneak-peak-1.jpg",
   },
   {
     id: 6,
@@ -39,7 +39,7 @@ export const speakers: Speaker[] = [
     id: 7,
     name: "John Doe",
     title: "CEO, TECH COMPANY",
-    image: "/images/sneak-peak-3.png",
+    image: "/images/sneak-peak-3.webp",
   },
   {
     id: 8,

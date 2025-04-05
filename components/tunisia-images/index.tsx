@@ -8,7 +8,7 @@ const TunisiaImages = ({ isAboutUsPage }: { isAboutUsPage: boolean }) => {
       <div className="flex flex-col gap-4 max-w-7xl mx-auto">
         <div className="w-full h-80 md:h-96 lg:h-[25rem] relative">
           <Image
-            src="/images/sneak-peak-1.png"
+            src="/images/sneak-peak-1.jpg"
             alt="Bizerte port"
             fill
             className="object-cover tunisia-image-border"
@@ -21,7 +21,7 @@ const TunisiaImages = ({ isAboutUsPage }: { isAboutUsPage: boolean }) => {
               src="/images/sneak-peak-2.png"
               alt="Eljemm Colosseum in Tunisia"
               fill
-              className="object-cover tunisia-image-border"
+              className="object-fit tunisia-image-border"
             />
           </div>
 
@@ -52,7 +52,7 @@ const TunisiaImages = ({ isAboutUsPage }: { isAboutUsPage: boolean }) => {
 
           <div className="relative overflow-hidden">
             <Image
-              src="/images/sneak-peak-3.png"
+              src="/images/sneak-peak-3.webp"
               alt="Ancient ruins with columns in Tunisia"
               fill
               className="object-cover tunisia-image-border"
