@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Button } from "../ui/button";
 import { Calendar, MapPin } from "lucide-react";
 import ActionButton from "../ActionButton";
 import HeroGradient from "../HeroGradient";

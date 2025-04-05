@@ -1,5 +1,5 @@
 import { contributors } from "@/constants";
-import Section from "../Section";
+import Section from "./Section";
 import Image from "next/image";
 
 export default function Partners() {

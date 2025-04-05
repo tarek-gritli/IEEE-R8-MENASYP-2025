@@ -13,6 +13,7 @@ const Section = ({
 }) => {
   return (
     <section
+      id="partners"
       className={`bg-dark min-h-screen flex flex-col max-w- xl py-12 px-4 ${className}`}
     >
       <TextWithPattern title={title} description={description} />

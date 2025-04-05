@@ -1,9 +1,13 @@
-const Partners = () => {
-  return (
-    <section className="bg-dark h-screen flex flex-col justify-center items-center p-4">
-      <h1 className="text-5xl font-bold text-white">Partners</h1>
-    </section>
-  );
-};
+import Hero from "@/components/partners/Hero";
+import Partners from "@/components/Partners";
+import Sponsors from "@/components/partners/Sponsors";
 
-export default Partners;
+export default function PartnersPage() {
+  return (
+    <div>
+      <Hero />
+      <Partners />
+      <Sponsors />
+    </div>
+  );
+}
