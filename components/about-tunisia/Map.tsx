@@ -20,7 +20,7 @@ const Map = () => {
         <div className="flex justify-center max-h-100">
           <Image
             src="/images/tunisia-map.jpg"
-            alt="Stacked IEEE images"
+            alt="Tunisia Map"
             width={600}
             height={400}
             className="object-fill"

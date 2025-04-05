@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-col justify-between items-start md:items-center gap-4">
         <Image
           src="/logo-icon-white.svg"
-          alt="menasyp logo"
+          alt="MenaSYP logo"
           width={120}
           height={100}
         />
@@ -41,7 +41,7 @@ const Footer = () => {
           <Link
             href="#"
             aria-label="LinkedIn"
-            className="text-white hover:text-[#ff3a5c] transition-colors duration-300"
+            className="text-white hover:text-primary100 transition-colors duration-300"
           >
             <Linkedin size={30} strokeWidth={1.5} />
           </Link>

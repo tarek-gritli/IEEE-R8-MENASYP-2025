@@ -18,7 +18,7 @@ const TextWithPattern = ({ title, description }: TextWithPattern) => {
       </div>
       <Image
         src="/images/pattern.png"
-        alt="Countries Pattern"
+        alt="Pattern"
         width={100}
         height={50}
         className="object-cover"

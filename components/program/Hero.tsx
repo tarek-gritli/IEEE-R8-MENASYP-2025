@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <HeroGradient
       backgroundType="image"
-      backgroundSrc="/images/program-hero.webp"
+      backgroundSrc="/images/hero/program-hero.webp"
     >
       <div className="flex flex-col items-center justify-center h-full">
         <Image

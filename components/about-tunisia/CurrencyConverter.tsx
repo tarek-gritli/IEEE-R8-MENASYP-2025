@@ -243,7 +243,7 @@ const CurrencyConverter = () => {
         <div className="flex justify-center max-h-100">
           <Image
             src="/images/tunisian-dinar-pattern.png"
-            alt="Stacked IEEE images"
+            alt="Tunisian Dinar Pattern"
             width={600}
             height={400}
             className="object-fill"
