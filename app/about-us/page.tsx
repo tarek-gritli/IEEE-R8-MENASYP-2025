@@ -11,7 +11,7 @@ const AboutUs = () => {
       <AboutTunisiaSection />
       <AboutStudentBranch />
       <AboutMenaSYP />
-      <TunisiaImages isAboutUsPage={true} />
+      <TunisiaImages isHomePage={true} />
       <ParticipatingCountries />
       <MeetOurTeam />
     </div>

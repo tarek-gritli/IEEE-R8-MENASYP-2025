@@ -6,7 +6,7 @@ const SneakPeek = () => {
       <h2 className="text-white text-center text-3xl font-bold mb-12">
         Sneak Peek
       </h2>
-      <TunisiaImages isAboutUsPage={false} />
+      <TunisiaImages isHomePage={false} />
     </section>
   );
 };
