@@ -32,7 +32,7 @@ const MeetOurTeamCarousel = () => {
               <h2 className="text-white text-center text-lg md:text-xl font-semibold group-hover:text-primary-400 transition-colors duration-300">
                 {oc.name}
               </h2>
-              <p className="text-[#9DA5AF] font-normal">{oc.title}</p>
+              <p className="hero-text-description font-normal">{oc.title}</p>
             </div>
           </CarouselItem>
         ))}

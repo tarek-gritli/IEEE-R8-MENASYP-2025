@@ -23,7 +23,7 @@ const Hero = () => {
             IEEE R8 MENASYP 2025 Host Country
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center text-[#9DA5AF] gap-4 mt-4">
+        <div className="flex flex-col items-center justify-center hero-text-description gap-4 mt-4">
           <p className=" font-medium">Learn more about Tunisia</p>
           <Link href="#discover" className="font-medium">
             <ArrowDown className="animate-bounce cursor-pointer" size={24} />
