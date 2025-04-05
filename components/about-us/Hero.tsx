@@ -1,7 +1,5 @@
-import HeroGradient from "../HeroGradient";
-import Image from "next/image";
-import { ArrowDown } from "lucide-react";
-import Link from "next/link";
+import HeroGradient from "../hero/HeroGradient";
+import HeroText from "../hero/HeroText";
 
 const Hero = () => {
   return (
@@ -9,27 +7,14 @@ const Hero = () => {
       backgroundType="image"
       backgroundSrc="/images/hero/about-us-hero.jpg"
     >
-      <div className="flex flex-col items-center justify-center h-full">
-        <Image
-          src="/logo-icon-white.svg"
-          alt="MenaSYP logo"
-          width={160}
-          height={160}
-        />
-
-        <div className="flex flex-col items-center justify-center gap-2 mt-4">
-          <h1 className="text-white text-3xl font-bold">About us</h1>
-          <p className="text-white text-xl font-medium">
-            Get to know the MENASYP organizers
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center hero-text-description gap-4 mt-4">
-          <p className=" font-medium">Scroll to learn more</p>
-          <Link href="#about" className="font-medium">
-            <ArrowDown className="animate-bounce cursor-pointer" size={24} />
-          </Link>
-        </div>
-      </div>
+      <HeroText
+        imgSrc="/logo-icon-white.svg"
+        altText="MenaSYP logo"
+        title="About us"
+        description="Get to know the MENASYP organizers"
+        arrowText="Scroll to learn more"
+        takeMeTo="#about"
+      />
     </HeroGradient>
   );
 };

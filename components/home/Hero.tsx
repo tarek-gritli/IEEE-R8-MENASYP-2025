@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Calendar, MapPin } from "lucide-react";
 import ActionButton from "../ActionButton";
-import HeroGradient from "../HeroGradient";
+import HeroGradient from "../hero/HeroGradient";
 
 const Hero = () => {
   const [daysLeft, setDaysLeft] = useState<number | null>(null);

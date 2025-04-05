@@ -1,7 +1,5 @@
-import HeroGradient from "../HeroGradient";
-import Image from "next/image";
-import { ArrowDown } from "lucide-react";
-import Link from "next/link";
+import HeroGradient from "../hero/HeroGradient";
+import HeroText from "../hero/HeroText";
 
 const Hero = () => {
   return (
@@ -9,27 +7,15 @@ const Hero = () => {
       backgroundType="video"
       backgroundSrc="/videos/tunisia-video.mp4"
     >
-      <div className="flex flex-col items-center justify-center h-full">
-        <Image
-          src="/images/countries/tunisia.png"
-          alt="Tunisia logo"
-          width={100}
-          height={100}
-        />
-
-        <div className="flex flex-col items-center justify-center gap-2 mt-4">
-          <h1 className="text-white text-3xl font-bold">Tunisia</h1>
-          <p className="text-white text-xl font-medium">
-            IEEE R8 MENASYP 2025 Host Country
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-center hero-text-description gap-4 mt-4">
-          <p className=" font-medium">Learn more about Tunisia</p>
-          <Link href="#discover" className="font-medium">
-            <ArrowDown className="animate-bounce cursor-pointer" size={24} />
-          </Link>
-        </div>
-      </div>
+      <HeroText
+        imgSrc="/images/countries/tunisia.png"
+        altText="Tunisia logo"
+        imgDim={100}
+        title="Tunisia"
+        description="IEEE R8 MENASYP 2025 Host Country"
+        arrowText="Learn more about Tunisia"
+        takeMeTo="#discover"
+      />
     </HeroGradient>
   );
 };
