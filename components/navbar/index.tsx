@@ -49,7 +49,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
-          <ActionButton isHomePage={isHomePage} text={"Register Now"} />
+          <ActionButton text="Register Now" />
         </div>
       </nav>
     </div>

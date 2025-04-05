@@ -6,10 +6,9 @@ interface Speaker {
 }
 
 interface Contributor {
-  name: string;
-  image: string;
-  imgWidth: number;
-  imgHeight: number;
+  title: string;
+  imageSrc: string;
+  altText: string;
 }
 
 interface NavbarLink {
@@ -35,6 +34,11 @@ interface TeamMember {
 }
 
 interface Country {
+  name: string;
+  image: string;
+}
+
+interface Sponsor {
   name: string;
   image: string;
 }

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../ui/button";
+import ActionButton from "../ActionButton";
+import { cn } from "@/lib/utils";
 
-const TunisiaImages = ({ isAboutUsPage }: { isAboutUsPage: boolean }) => {
+const TunisiaImages = ({ isHomePage }: { isHomePage: boolean }) => {
   return (
     <div className="bg-dark min-h-screen">
-      <div className="flex flex-col gap-4 max-w-7xl mx-auto">
+      <div className="flex flex-col gap-4 max-w-6xl mx-auto">
         <div className="w-full h-80 md:h-96 lg:h-[25rem] relative">
           <Image
             src="/images/sneak-peak-1.jpg"
@@ -15,7 +16,12 @@ const TunisiaImages = ({ isAboutUsPage }: { isAboutUsPage: boolean }) => {
           />
         </div>
 
-        <div className="grid grid-cols-3 gap-4 h-64 md:h-72 lg:h-96">
+        <div
+          className={cn(
+            "grid gap-4 h-64 md:h-72 lg:h-96",
+            isHomePage ? "grid-cols-3" : "grid-cols-2"
+          )}
+        >
           <div className="relative overflow-hidden">
             <Image
               src="/images/sneak-peak-2.png"
@@ -25,30 +31,26 @@ const TunisiaImages = ({ isAboutUsPage }: { isAboutUsPage: boolean }) => {
             />
           </div>
 
-          <div className="flex flex-col items-center justify-center bg-[#1B1123]">
-            <div className="flex flex-col items-center justify-center text-white text-center gap-2 relative w-full h-full p-2">
-              <Image
-                src="/images/countries/tunisia.png"
-                alt="Tunisia flag symbol"
-                width={100}
-                height={100}
-              />
-              <p className="text-sm md:text-3xl font-bold">Tunisia</p>
+          {isHomePage && (
+            <div className="flex flex-col items-center justify-center bg-[#1B1123]">
+              <div className="flex flex-col items-center justify-center text-white text-center gap-2 relative w-full h-full p-2">
+                <Image
+                  src="/images/countries/tunisia.png"
+                  alt="Tunisia flag symbol"
+                  width={100}
+                  height={100}
+                />
+                <p className="text-sm md:text-3xl font-bold">Tunisia</p>
 
-              {isAboutUsPage && (
-                <>
-                  <p className="font-medium text-lg mb-2">
-                    MENASYP 2025 Host Country
-                  </p>
-                  <Link href="about-tunisia">
-                    <Button className="bg-primary100 w-30 cursor-pointer rounded hover:bg-[#ff2040] text-white font-bold text-sm">
-                      Learn more
-                    </Button>
-                  </Link>
-                </>
-              )}
+                <p className="font-medium text-lg mb-2">
+                  MENASYP 2025 Host Country
+                </p>
+                <Link href="about-tunisia">
+                  <ActionButton text="Learn More" />
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="relative overflow-hidden">
             <Image

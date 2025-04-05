@@ -49,7 +49,7 @@ const Hero = () => {
             <span className="text-white font-medium">Gammarth, Tunisia</span>
           </div>
         </div>
-        <ActionButton isHomePage={true} text="Register Now" className="mt-4" />
+        <ActionButton text="Register Now" className="mt-4" />
       </div>
     </section>
   );
