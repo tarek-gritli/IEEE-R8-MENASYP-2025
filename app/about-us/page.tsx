@@ -1,18 +1,18 @@
+import Hero from "@/components/about-us/Hero";
 import AboutMenaSYP from "@/components/about-us/AboutMenaSYP";
-import AboutStudentBranch from "@/components/about-us/AboutStudentBranch";
+import ParticipatingCountries from "@/components/about-us/ParticipatingCountries";
 import AboutTunisiaSection from "@/components/about-us/AboutTunisiaSection";
+import AboutStudentBranch from "@/components/about-us/AboutStudentBranch";
 import MeetOurTeam from "@/components/about-us/MeetOurTeam";
-import ParticipatingCountries from "@/components/home/ParticipatingCountries";
-import TunisiaImages from "@/components/tunisia-images";
 
 const AboutUs = () => {
   return (
     <div>
+      <Hero />
+      <AboutMenaSYP />
+      <ParticipatingCountries />
       <AboutTunisiaSection />
       <AboutStudentBranch />
-      <AboutMenaSYP />
-      <TunisiaImages isHomePage={true} />
-      <ParticipatingCountries />
       <MeetOurTeam />
     </div>
   );

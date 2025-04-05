@@ -9,7 +9,7 @@ const ActionButton = ({
 }) => {
   return (
     <Button
-      className={`bg-primary100 cursor-pointer hover:bg-[#C31B44] max-w-30 font-bold text-white ${className}`}
+      className={`bg-primary100 cursor-pointer hover:bg-[#C31B44] font-bold text-white ${className}`}
     >
       {text}
     </Button>

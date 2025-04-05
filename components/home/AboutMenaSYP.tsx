@@ -32,7 +32,7 @@ export default function AboutSection() {
         </div>
         <div className="flex justify-center">
           <Image
-            src="/images/stacked-images.png"
+            src="/images/menasyp-stacked.png"
             alt="Stacked IEEE images"
             width={800}
             height={400}

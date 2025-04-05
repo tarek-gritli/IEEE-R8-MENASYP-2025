@@ -1,37 +1,29 @@
 import Image from "next/image";
+import ActionButton from "../ActionButton";
 
-const AboutTunisiaSection = () => {
+const Map = () => {
   return (
-    <section className="bg-dark h-screen flex flex-col justify-center items-center p-4">
-      <div className="mb-8">
-        <h1 className="text-4xl text-white font-bold text-center">
-          About Us
-        </h1>
-        <p className="font-bold text-primary100 text-xl mt-4">
-          Know More about Us
-        </p>
-      </div>
-      <div className="flex flex-col md:flex-row justify-around items-center gap-8 w-full mt-8">
-        <div className="flex flex-col max-w-xl text-center text-white md:text-left">
-          <h3 className="text-3xl font-bold pb-4 text-left ml-6">
-            About IEEE Tunisia Section
-          </h3>
+    <section className="bg-dark h-screen flex justify-center items-center p-4">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div className="space-y-6 text-white">
+          <h2 className="text-4xl font-bold">IEEE Tunisia Section</h2>
 
-          <p className="font-medium md:text-lg leading-relaxed mb-6">
+          <p className="text-lg font-medium">
             IEEE Tunisia Section aims to spread IEEE Activities to all corners
             of the country through educational and technical activities,
             networking opportunities, and to develop technology and its
             applications for humanitarian goals. The section supports chapters,
             special interest groups, student activities and student awards.
           </p>
-        </div>
 
-        <div>
+          <ActionButton text="Learn More" />
+        </div>
+        <div className="flex justify-center max-h-100">
           <Image
-            src="/images/ieee-tunisia-section-logo.png"
-            alt="IEEE Tunisia Section Logo"
+            src="/images/ieee-partners/ieee-tunisia-section-pattern.png"
+            alt="IEEE Tunisia Section logo"
             width={400}
-            height={200}
+            height={400}
           />
         </div>
       </div>
@@ -39,4 +31,4 @@ const AboutTunisiaSection = () => {
   );
 };
 
-export default AboutTunisiaSection;
+export default Map;

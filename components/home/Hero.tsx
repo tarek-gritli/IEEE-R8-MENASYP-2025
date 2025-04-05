@@ -28,7 +28,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <HeroGradient backgroundType="image" backgroundSrc="/images/hero.jpg">
+    <HeroGradient backgroundType="image" backgroundSrc="/images/home-hero.jpg">
       <div className="flex flex-col items-center justify-center h-full">
         <Image
           src="/images/logo-squared-white.png"
