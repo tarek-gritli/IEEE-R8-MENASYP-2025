@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ActionButton from "../ActionButton";
+import Link from "next/link";
 
 const Map = () => {
   return (
@@ -15,8 +16,9 @@ const Map = () => {
             applications for humanitarian goals. The section supports chapters,
             special interest groups, student activities and student awards.
           </p>
-
-          <ActionButton text="Learn More" />
+          <Link href="https://ieee.tn/" target="_blank">
+            <ActionButton text="Learn More" />
+          </Link>
         </div>
         <div className="flex justify-center max-h-100">
           <Image

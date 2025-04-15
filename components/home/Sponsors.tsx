@@ -8,7 +8,8 @@ export default function Sponsors() {
       description="Check out our main sponsors and partners"
       className="items-center"
     >
-      <SponsorsCarousel />
+      {/* <SponsorsCarousel /> */}
+      <></>
     </Section>
   );
 }

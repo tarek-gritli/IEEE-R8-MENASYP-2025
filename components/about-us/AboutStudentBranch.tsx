@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ActionButton from "../ActionButton";
+import Link from "next/link";
 
 export default function AboutStudentBranch() {
   return (
@@ -20,8 +21,9 @@ export default function AboutStudentBranch() {
             (congresses, conferences, 24h challenges, workshops, competitions…)
             in various domains
           </p>
-
-          <ActionButton text="Learn More" />
+          <Link href="https://insat.ieee.tn/" target="_blank">
+            <ActionButton text="Learn More" />
+          </Link>
         </div>
         <div className="flex justify-center">
           <Image

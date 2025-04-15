@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ActionButton from "../ActionButton";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
@@ -27,8 +28,9 @@ export default function AboutSection() {
             infusing the event with cultural experiences that highlight
             Tunisia's traditions.
           </p>
-
-          <ActionButton text="Learn More" />
+          <Link href="/about-us">
+            <ActionButton text="Learn More" />
+          </Link>
         </div>
         <div className="flex justify-center">
           <Image

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ActionButton from "../ActionButton";
+import Link from "next/link";
 
 const Map = () => {
   return (
@@ -14,8 +15,12 @@ const Map = () => {
             established on its land. Tunisia is a true melting pot of Amazigh,
             Arab Muslim, Ottoman, Roman, and Carthage cultures.
           </p>
-
-          <ActionButton text="View on Maps" />
+          <Link
+            href="https://maps.app.goo.gl/PsDPbsZ3mMj3L9keA"
+            target="_blank"
+          >
+            <ActionButton text="View on Maps" />
+          </Link>
         </div>
         <div className="flex justify-center max-h-100">
           <Image
