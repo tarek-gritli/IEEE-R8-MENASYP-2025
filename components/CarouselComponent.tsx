@@ -2,6 +2,7 @@
 
 import AutoScroll from "embla-carousel-auto-scroll";
 import { Carousel, CarouselContent } from "./ui/carousel";
+
 const CarouselComponent = ({ children }: { children: React.ReactNode }) => {
   return (
     <Carousel
@@ -9,6 +10,7 @@ const CarouselComponent = ({ children }: { children: React.ReactNode }) => {
       opts={{
         loop: true,
         align: "center",
+        dragFree: true,
       }}
       plugins={[
         AutoScroll({
@@ -20,7 +22,7 @@ const CarouselComponent = ({ children }: { children: React.ReactNode }) => {
         }),
       ]}
     >
-      <CarouselContent className="-ml-4">{children}</CarouselContent>
+      <CarouselContent className="-ml-2 sm:-ml-4">{children}</CarouselContent>
     </Carousel>
   );
 };

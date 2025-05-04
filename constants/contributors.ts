@@ -19,7 +19,11 @@ export const contributors: Contributor[] = [
     imageSrc: "/images/ieee-partners/ieee-tunisia-section-pattern.png",
     altText: "IEEE Tunisia Section logo",
   },
-
+  {
+    title: "IEEE INSAT SB",
+    imageSrc: "/images/ieee-partners/ieee-insat-sb-pattern.png",
+    altText: "IEEE INSAT SB logo",
+  },
   {
     title: "INSAT",
     imageSrc: "/images/ieee-partners/insat-pattern.png",

@@ -8,6 +8,10 @@ export const navbarLinks: NavbarLink[] = [
     label: "Tunisia",
   },
   {
+    route: "/visa",
+    label: "Visa",
+  },
+  {
     route: "/about-us",
     label: "About",
   },
@@ -18,9 +22,5 @@ export const navbarLinks: NavbarLink[] = [
   {
     route: "/partners",
     label: "Partners",
-  },
-  {
-    route: "/faq",
-    label: "FAQ",
   },
 ];

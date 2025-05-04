@@ -13,7 +13,7 @@ const Hero = () => {
         title="Timeline & Schedule"
         description="Learn more about the MENASYP 2025 schedule and activities"
         arrowText="Check the program"
-        takeMeTo="#"
+        takeMeTo="schedule"
       />
     </HeroGradient>
   );

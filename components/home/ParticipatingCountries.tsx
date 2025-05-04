@@ -6,7 +6,7 @@ const ParticipatingCountries = () => {
     <Section
       title="Participating Countries"
       description="15+ Countries of the MENA Region"
-      className="items-center"
+      className="items-center py-16 md:py-20"
     >
       <CountriesCarousel />
     </Section>

@@ -38,6 +38,10 @@ interface Country {
   image: string;
 }
 
+interface CountryWithDuration extends Country {
+  duration: number;
+}
+
 interface Sponsor {
   name: string;
   image: string;

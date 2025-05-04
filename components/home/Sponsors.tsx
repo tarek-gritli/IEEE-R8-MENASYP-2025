@@ -9,7 +9,7 @@ export default function Sponsors() {
       className="items-center"
     >
       {/* <SponsorsCarousel /> */}
-      <></>
+      <div className="h-[25vh]"></div>
     </Section>
   );
 }

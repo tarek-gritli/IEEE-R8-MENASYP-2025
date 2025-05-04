@@ -14,7 +14,7 @@ const Hero = () => {
         title="Tunisia"
         description="IEEE R8 MENASYP 2025 Host Country"
         arrowText="Learn more about Tunisia"
-        takeMeTo="#discover"
+        takeMeTo="discover"
       />
     </HeroGradient>
   );

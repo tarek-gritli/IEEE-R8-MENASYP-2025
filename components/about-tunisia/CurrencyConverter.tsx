@@ -1,36 +1,57 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { currencies } from "@/constants";
-import ActionButton from "../ActionButton";
 import Image from "next/image";
+
+const FALLBACK_EXCHANGE_RATES = {
+  USD: 1,
+  EUR: 0.85,
+  GBP: 0.73,
+  AED: 3.67,
+  BHD: 0.376,
+  DZD: 134.5,
+  EGP: 30.9,
+  IQD: 1310,
+  IRR: 42000,
+  JOD: 0.709,
+  KWD: 0.307,
+  LBP: 15000,
+  LYD: 4.83,
+  MAD: 9.8,
+  OMR: 0.384,
+  QAR: 3.64,
+  SAR: 3.75,
+  SYP: 12500,
+  YER: 250,
+  TND: 3.1,
+};
 
 const CurrencyConverter = () => {
   const [amount, setAmount] = useState(1);
   const [fromCurrency, setFromCurrency] = useState("USD");
-  const [toCurrency, setToCurrency] = useState("TND");
   const [convertedAmount, setConvertedAmount] = useState(0);
   const [showFromDropdown, setShowFromDropdown] = useState(false);
-  const [showToDropdown, setShowToDropdown] = useState(false);
   const [error, setError] = useState("");
   const [exchangeRates, setExchangeRates] = useState<Record<string, number>>(
-    {}
+    FALLBACK_EXCHANGE_RATES
   );
   const [isFromInputFocused, setIsFromInputFocused] = useState(false);
   const [isToInputFocused, setIsToInputFocused] = useState(false);
-  const [direction, setDirection] = useState("from"); // "from" means converting from selected currency to TND, "to" means the opposite
 
-  // Refs for click outside functionality
   const fromDropdownRef = useRef<HTMLDivElement>(null);
-  const toDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchConversion = async () => {
-      setError("");
-
       try {
-        const response = await fetch("/api/currency-convert");
+        const response = await fetch(
+          "https://api.exchangerate-api.com/v4/latest/USD",
+          {
+            method: "GET",
+            mode: "cors",
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Conversion failed");
@@ -42,9 +63,9 @@ const CurrencyConverter = () => {
         }
 
         setExchangeRates(data.rates);
+        setError("");
       } catch (err) {
-        console.error("Failed to fetch exchange rates:", err);
-        setError("Failed to load exchange rates. Please try again later.");
+        console.warn("Using fallback exchange rates:", err);
       }
     };
 
@@ -54,26 +75,17 @@ const CurrencyConverter = () => {
   useEffect(() => {
     if (Object.keys(exchangeRates).length === 0) return;
     try {
-      if (direction === "from") {
-        const usdToFromRate =
-          fromCurrency === "USD" ? 1 : 1 / exchangeRates[fromCurrency];
-        const usdToTndRate = exchangeRates["TND"];
-        const finalRate = usdToFromRate * usdToTndRate;
+      const usdToFromRate =
+        fromCurrency === "USD" ? 1 : 1 / exchangeRates[fromCurrency];
+      const usdToTndRate = exchangeRates["TND"];
+      const finalRate = usdToFromRate * usdToTndRate;
 
-        setConvertedAmount(parseFloat((amount * finalRate).toFixed(2)));
-      } else {
-        const tndToUsdRate = 1 / exchangeRates["TND"];
-        const usdToToCurrencyRate =
-          toCurrency === "USD" ? 1 : exchangeRates[toCurrency];
-        const finalRate = tndToUsdRate * usdToToCurrencyRate;
-
-        setConvertedAmount(parseFloat((amount * finalRate).toFixed(2)));
-      }
+      setConvertedAmount(parseFloat((amount * finalRate).toFixed(2)));
     } catch (err) {
       console.error("Conversion error:", err);
       setError("Currency conversion failed. Please try again.");
     }
-  }, [amount, fromCurrency, toCurrency, exchangeRates, direction]);
+  }, [amount, fromCurrency, exchangeRates]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -84,14 +96,6 @@ const CurrencyConverter = () => {
       ) {
         setShowFromDropdown(false);
       }
-
-      if (
-        toDropdownRef.current &&
-        !toDropdownRef.current.contains(event.target as Node) &&
-        showToDropdown
-      ) {
-        setShowToDropdown(false);
-      }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -99,35 +103,26 @@ const CurrencyConverter = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [showFromDropdown, showToDropdown]);
+  }, [showFromDropdown]);
 
   const handleFromCurrencyChange = (currency: string) => {
     setFromCurrency(currency);
     setShowFromDropdown(false);
   };
 
-  const handleToCurrencyChange = (currency: string) => {
-    setToCurrency(currency);
-    setShowToDropdown(false);
-  };
-
-  const swapDirection = () => {
-    setDirection(direction === "from" ? "to" : "from");
-  };
-
   return (
-    <section className="bg-dark h-screen flex justify-center items-center p-4">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <div className="space-y-6 text-white">
-          <h2 className="text-4xl font-bold">
+    <section className="bg-dark flex justify-center items-center py-12 px-4 md:px-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div className="space-y-4 md:space-y-6 text-white order-2 md:order-1">
+          <h2 className="text-3xl md:text-4xl font-bold">
             Say Hi to the Tunisian Dinar 👋
           </h2>
 
-          <p className="text-lg font-medium">
+          <p className="text-base md:text-lg font-medium">
             The national currency is the Tunisian dinar, denoted by the symbol
             "دينار" or "DT" (ISO code: TND).
           </p>
-          <h2 className="text-2xl font-bold">Convert your currency</h2>
+          <h2 className="text-xl font-bold">Convert your currency</h2>
           {error && (
             <div className="bg-red-500/20 text-white p-3 rounded-lg mb-4">
               {error}
@@ -145,34 +140,23 @@ const CurrencyConverter = () => {
                 <input
                   type="number"
                   min={0}
-                  value={direction === "from" ? amount : convertedAmount}
+                  value={amount}
                   onChange={(e) =>
-                    direction === "from" &&
                     setAmount(Number.parseFloat(e.target.value) || 0)
                   }
                   onFocus={() => setIsFromInputFocused(true)}
                   onBlur={() => setIsFromInputFocused(false)}
-                  readOnly={direction !== "from"}
                   className="w-1/2 py-3 px-5 text-center text-white font-medium bg-transparent outline-none"
                 />
                 <div
                   className="w-1/2 py-3 px-5 text-center text-white font-medium cursor-pointer flex items-center justify-center"
-                  onClick={() => {
-                    if (direction === "from") {
-                      setShowFromDropdown(!showFromDropdown);
-                      setShowToDropdown(false);
-                    } else {
-                      setShowToDropdown(!showToDropdown);
-                      setShowFromDropdown(false);
-                    }
-                  }}
+                  onClick={() => setShowFromDropdown(!showFromDropdown)}
                 >
-                  {direction === "from" ? fromCurrency : toCurrency}{" "}
-                  <ChevronDown className="ml-1 h-4 w-4" />
+                  {fromCurrency} <ChevronDown className="ml-1 h-4 w-4" />
                 </div>
               </div>
 
-              {showFromDropdown && direction === "from" && (
+              {showFromDropdown && (
                 <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
                   {currencies.map((currency) => (
                     <div
@@ -185,34 +169,13 @@ const CurrencyConverter = () => {
                   ))}
                 </div>
               )}
-
-              {showToDropdown && direction === "to" && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-lg shadow-lg z-10 max-h-60 overflow-y-auto">
-                  {currencies.map((currency) => (
-                    <div
-                      key={currency.code}
-                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer text-black"
-                      onClick={() => handleToCurrencyChange(currency.code)}
-                    >
-                      {currency.code} - {currency.name}
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
 
-            <div
-              className="cursor-pointer p-2 hover:bg-gray-800 rounded-full"
-              onClick={swapDirection}
-            >
-              {direction === "from" ? (
-                <ArrowRight className="text-primary100 font-bold w-6 h-6" />
-              ) : (
-                <ArrowLeft className="text-primary100 font-bold w-6 h-6" />
-              )}
+            <div className="flex items-center justify-center">
+              <span className="text-primary100 font-bold">=</span>
             </div>
 
-            <div className="relative w-full" ref={toDropdownRef}>
+            <div className="relative w-full">
               <div
                 className={`bg-transparent rounded-lg flex items-center overflow-hidden ${
                   isToInputFocused
@@ -223,30 +186,26 @@ const CurrencyConverter = () => {
                 <input
                   type="number"
                   min={0}
-                  value={direction === "from" ? convertedAmount : amount}
-                  onChange={(e) =>
-                    direction === "to" &&
-                    setAmount(Number.parseFloat(e.target.value) || 0)
-                  }
+                  value={convertedAmount}
+                  readOnly
                   onFocus={() => setIsToInputFocused(true)}
                   onBlur={() => setIsToInputFocused(false)}
-                  readOnly={direction === "from"}
                   className="w-1/2 py-3 px-5 text-center text-white font-medium bg-transparent outline-none"
                 />
-                <div className="w-1/2 py-3 px-5 text-center text-white font-medium cursor-pointer flex items-center justify-center">
-                  {direction === "from" ? "TND" : "TND"}
+                <div className="w-1/2 py-3 px-5 text-center text-white font-medium flex items-center justify-center">
+                  TND
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex justify-center max-h-100">
+        <div className="flex justify-center order-1 md:order-2 mb-8 md:mb-0">
           <Image
             src="/images/tunisian-dinar-pattern.png"
             alt="Tunisian Dinar Pattern"
             width={600}
             height={400}
-            className="object-fill"
+            className="max-w-full h-auto"
           />
         </div>
       </div>

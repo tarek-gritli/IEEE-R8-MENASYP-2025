@@ -13,7 +13,7 @@ const Hero = () => {
         title="About us"
         description="Get to know the MENASYP organizers"
         arrowText="Scroll to learn more"
-        takeMeTo="#about"
+        takeMeTo="about"
       />
     </HeroGradient>
   );

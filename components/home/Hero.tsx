@@ -44,14 +44,18 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-4">
           <div className="flex items-center">
             <Calendar className="w-5 h-5 mr-2 text-primary100" />
-            <span className="text-white font-medium">27-30 August 2025</span>
+            <span className="text-white font-medium">27-29 August 2025</span>
           </div>
           <div className="flex items-center">
             <MapPin className="w-5 h-5 mr-2 text-primary100" />
             <span className="text-white font-medium">Gammarth, Tunisia</span>
           </div>
         </div>
-        <ActionButton text="Register Now" className="mt-4" />
+        <ActionButton
+          text="Registration coming soon"
+          className="mt-4"
+          disabled={true}
+        />
       </div>
     </HeroGradient>
   );

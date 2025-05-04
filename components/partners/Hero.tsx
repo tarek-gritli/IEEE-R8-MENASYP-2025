@@ -13,7 +13,7 @@ const Hero = () => {
         title="Sponsors & Partners"
         description="Partners of the MENASYP 2025 Congress"
         arrowText="Check them out"
-        takeMeTo="#partners"
+        takeMeTo="partners"
       />
     </HeroGradient>
   );

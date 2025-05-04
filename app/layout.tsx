@@ -23,9 +23,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${instrumentSans.variable} antialiased flex flex-col min-h-screen`}
-      >
+      <head>
+        <link
+          rel="icon"
+          href="/images/favicon-light.ico"
+          media="(prefers-color-scheme: light)"
+        />
+        <link
+          rel="icon"
+          href="/images/favicon-dark.ico"
+          media="(prefers-color-scheme: dark)"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/images/favicon-light.ico"
+          media="(prefers-color-scheme: light)"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/images/favicon-dark.ico"
+          media="(prefers-color-scheme: dark)"
+        />
+      </head>
+      <body className={`${instrumentSans.variable} antialiased bg-dark`}>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
